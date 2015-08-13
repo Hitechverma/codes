@@ -1,19 +1,25 @@
+import math
+
 noc = int(input())
 def funny(stri):
+	rev = stri[::-1]
 	mylist = (stri)
-	r = len(mylist)/2
-	for y in range(0,r-1):
-		if (ord(mylist[r-y])-ord(mylist[y]) == ord(mylist[r-y-1])-ord(mylist[y+1])):
-			print "funny"
-			break
-		# else:
-		# 	print "not funny"
-		# 	break
+	mylistr = (rev)
+	r = len(mylist)
+	z = r%2
+	if z == 0:
+		for y in range(0,r):
+			if math.fabs((ord(mylist[y]))-math.fabs(ord(mylist[y+1]))) == math.fabs((ord(mylistr[y]))-math.fabs(ord(mylistr[y+1]))):
+				print "Funny"
+				break
+			else:
+				print "Not Funny"
+				break
+	else:
+		print "Not Funny"
 list = []
 for x in range(0,noc):
 	stri = raw_input()
-	rev = stri[::-1]
-	print rev
 	list.append(stri)
 for a in range(0,noc):
 	funny(list[a])
