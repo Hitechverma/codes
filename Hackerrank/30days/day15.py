@@ -21,7 +21,7 @@ class Solution:
 			current = head
 			while current.next!=None:
 				current = current.next
-			current.next = Node(data)
+			current.next = Node(data)   #The major concept of linked lsit 
 			# current.next = None
 		return head
 
